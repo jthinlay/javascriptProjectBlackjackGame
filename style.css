@@ -12,7 +12,7 @@ body {
     justify-content: center;
     text-align: center;
     width: 70%;
-    font-family: Abril Fatface ,Arial, Helvetica, sans-serif;
+    font-family: Monoton ,Arial, Helvetica, sans-serif;
     min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
@@ -102,10 +102,17 @@ button {
     margin-right: auto;
     margin-top: 10px;
 }
+table {
+    box-shadow: 1px 1px 2px black;
+}
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     height: 20px;
+}
+th {
+    background-color: lightblue; 
+    color: darkred;
 }
 .cardImg {
    
