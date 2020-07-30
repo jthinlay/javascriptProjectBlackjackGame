@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+htlm {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100vh;  
+}
+.main_container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+    font-family: Abril Fatface ,Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 30px black;
+    
+}
+.header {
+    height: 150px;
+    width: 100%;
+    border: 1px solid black;
+    font-size: 1.5rem;
+}
+.main_player {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 25rem;
+    color: white;
+    background: rgb(75,75,74);
+background: linear-gradient(90deg, rgba(75,75,74,1) 0%, rgba(3,69,21,0.7441351540616247) 50%, rgba(53,56,56,1) 100%);
+}
+.player_you {
+    width: 50%;
+    border: 1px solid black;
+}
+.player_dealer {
+    width: 50%;
+    border: 1px solid black;
+}
+.all_btn {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    width: 100%;
+    border: 1px solid black;
+    background: rgb(75,75,74);
+    background: linear-gradient(90deg, rgba(75,75,74,1) 0%, rgba(1,111,31,0.7441351540616247) 50%, rgba(53,56,56,1) 100%);
+    
+}
+
+button:hover {
+    filter: brightness(90%); 
+  }
+button:active {
+transform: translate(0, 0.3rem);
+box-shadow: 0 0.1rem rgba(255,255, 255, 065); 
+}
+.btn {
+    width: 30%;
+    height: 80px;
+    margin: 5px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+#black-hit-btn{
+    background-color: #3399ff;
+    color: #fff;
+}
+#black-stand-btn {
+    background-color: orange;
+    color: #000;
+}
+#black-deal-btn {
+    background-color: red;
+    color: #fff;
+}
+button {
+    width: 25%;
+    height: 60px;
+    margin-top: 10px;
+    font-size: larger;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px black;
+    
+}
+.score {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 20px;
+}
+.cardImg {
+   
+    margin-left: 10px;
+}
