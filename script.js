@@ -86,7 +86,7 @@ function updateScore(card, activePlayer){
     if (card === "A") {
         // if adding 11 keeps me below 21, and 11, Otherwise keeps me as 1
         if(activePlayer['score'] += blackjackGame['cardsMap'][card][1] <= 21){
-             activePlayer['score'] += blackjackGame['cardsMap'][card][1] - 1;
+             activePlayer['score'] += blackjackGame['cardsMap'][card][1];
         } else {
             activePlayer['score'] += blackjackGame['cardsMap'][card][0];
         }
