@@ -86,7 +86,7 @@ function updateScore(card, activePlayer){
     if (card === "A") {
         // if adding 11 keeps me below 21, and 11, Otherwise keeps me as 1
         if(activePlayer['score'] += blackjackGame['cardsMap'][card][1] <= 21){
-             activePlayer['score'] += blackjackGame['cardsMap'][card][1];
+             activePlayer['score'] += blackjackGame['cardsMap'][card][1] -1;
         } else {
             activePlayer['score'] += blackjackGame['cardsMap'][card][0];
         }
@@ -99,7 +99,7 @@ function showScore(activePlayer) {
     if(activePlayer['score'] > 21) {
         document.querySelector(activePlayer['scoreSpan']).textContent = "BUST!!!"
         document.querySelector(activePlayer['scoreSpan']).style.color = 'red';
-        bustedSound.play();
+        
     } else {
         document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score']; 
     }
@@ -127,34 +127,28 @@ async function dealerLogic() {
 // compute winner and return who just won
 // update wins,losses, and draws
 function computeWinner(){
-    let winner;
-
-    if(YOU['score'] <= 21){
-        //condition: higher score than dealer or when dealer busts you're winner
-        if(YOU['score'] > DEALER['score'] || DEALER['score'] > 21) {
-            blackjackGame['wins']++; 
-            winner = YOU;
-           
-        } else if (YOU['score'] < DEALER['score']) {
-            blackjackGame['losses']++; 
-            winner = DEALER;
-        
-        } else if (YOU['score'] === DEALER['score']){
-            blackjackGame['draws']++; 
-        }
-    // condition: when user busts but dealer doesn't
-    } else if (YOU['score'] > 21 && DEALER['score'] <= 21){
-        winner = DEALER;
-        blackjackGame['losses']++;
-
+    let winner; 
+       if (YOU['score'] <= 21){
+                 //condition: higher score than dealer or when dealer busts you're winner
+                if(YOU['score'] > DEALER['score'] || DEALER['score'] > 21){
+                    winner = YOU;
+                    blackjackGame['wins']++;
+                }else if(YOU['score'] < DEALER['score']) {
+                    winner = DEALER;
+                    blackjackGame['losses']++;    
+                }else if(YOU['score'] === DEALER['score']){
+                    blackjackGame['draws']++; 
+                }
         //condition: when you AND the dealer busts
-    } else if (YOU['score'] > 21 && DEALER['score'] > 21){
-        blackjackGame['draws']++;
-    }   
-        console.log("Wins:", blackjackGame['wins']);
-        console.log("Losses:", blackjackGame['losses']);
-        console.log("Draws:", blackjackGame['draws']);
-        return winner;
+        } else if(YOU['score'] > 21 && DEALER['score'] > 21) {
+                    blackjackGame['draws']++;
+
+        // condition: when you busts but dealer doesn't
+        } else if (YOU['score'] > 21 && DEALER['score'] <= 21) {
+                 winner = DEALER;
+                 blackjackGame['losses']++;
+       }
+    return winner;
 }
 
 function showResult(winner){
